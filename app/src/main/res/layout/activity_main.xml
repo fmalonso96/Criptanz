@@ -6,13 +6,109 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageButton
+        android:id="@+id/home_btn"
+        android:layout_width="110dp"
+        android:layout_height="90dp"
+        android:src="@drawable/ic_home"
+        android:layout_marginTop="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/movements_btn"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:textSize="12sp"
+        android:text="Home"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintStart_toStartOf="@id/home_btn"
+        app:layout_constraintBottom_toBottomOf="@id/home_btn"
+        app:layout_constraintEnd_toEndOf="@id/home_btn"/>
+
+    <ImageButton
+        android:id="@+id/movements_btn"
+        android:layout_width="110dp"
+        android:layout_height="90dp"
+        android:src="@drawable/ic_movements"
+        android:layout_marginTop="18dp"
+        app:layout_constraintStart_toEndOf="@id/home_btn"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/configuration_btn"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:text="Movimientos"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintStart_toStartOf="@id/movements_btn"
+        app:layout_constraintBottom_toBottomOf="@id/movements_btn"
+        app:layout_constraintEnd_toEndOf="@id/movements_btn"/>
+
+    <ImageButton
+        android:id="@+id/configuration_btn"
+        android:layout_width="110dp"
+        android:layout_height="90dp"
+        android:src="@drawable/ic_configuration"
+        android:layout_marginTop="18dp"
+        app:layout_constraintStart_toEndOf="@id/movements_btn"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:text="Configuración"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintStart_toStartOf="@id/configuration_btn"
+        app:layout_constraintBottom_toBottomOf="@id/configuration_btn"
+        app:layout_constraintEnd_toEndOf="@id/configuration_btn"/>
+
+    <TextView
+        android:id="@+id/search"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="15dp"
+        android:textSize="16sp"
+        android:background="@drawable/round_edge"
+        android:text="Cotizaciones en Pesos Argentinos"
+        app:layout_constraintStart_toStartOf="@id/home_btn"
+        app:layout_constraintEnd_toEndOf="@id/configuration_btn"
+        app:layout_constraintTop_toBottomOf="@id/movements_btn"/>
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_arg_flag"
+        android:layout_marginRight="5dp"
+        app:layout_constraintEnd_toEndOf="@id/search"
+        app:layout_constraintBottom_toBottomOf="@id/search"
+        app:layout_constraintTop_toTopOf="@id/search"/>
+
+    <TextView
+        android:id="@+id/available_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Monedas disponibles"
+        android:alpha="0.5"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="2dp"
+        app:layout_constraintTop_toBottomOf="@id/search"
+        app:layout_constraintStart_toStartOf="@id/search"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintTop_toBottomOf="@id/available_txt"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@id/search"
+        app:layout_constraintEnd_toEndOf="@id/search"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
